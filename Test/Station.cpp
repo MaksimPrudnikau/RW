@@ -2,10 +2,10 @@
 #include "Station.h"
 
 const int
-NAME_POS = 22,
-FIRST_ROW_POS = 53,
-SECOND_ROW_POS = 76,
-THIRD_ROW_POS = 99;
+NAME_POS = 22, //позиция для имен
+FIRST_ROW_POS = 53, // первая колонка
+SECOND_ROW_POS = 76, //вторая колонка
+THIRD_ROW_POS = 99; // третяя колонка
 
 
 //Удаляет пробелы из строки
@@ -23,6 +23,7 @@ string remSpaces(string input)
 	return input;
 }
 
+//считывание для имен
 string ReadTargetName(string line,int pos)
 {
 	string target_name;
@@ -32,6 +33,7 @@ string ReadTargetName(string line,int pos)
 	return target_name;
 }
 
+//считывание для чисел
 double ReadMeas(string line, int pos)
 {
 	string target;
@@ -101,7 +103,7 @@ void Station::set_s0(string& line) {
 }
 
 void Station::set_vx(string& line) {
-	vx = ReadMeas(line, FIRST_ROW_POS);
-	vy = ReadMeas(line, SECOND_ROW_POS);
-	vz = ReadMeas(line, THIRD_ROW_POS);
+	global_vx = ReadMeas(line, FIRST_ROW_POS);
+	global_vy = ReadMeas(line, SECOND_ROW_POS);
+	global_vz = ReadMeas(line, THIRD_ROW_POS);
 }

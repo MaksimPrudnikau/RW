@@ -63,7 +63,7 @@ public:
 		vz;
 	vector<Meas> measVec;
 
-
+	//fixme
 	Station()
 	{
 		T = global_T;
