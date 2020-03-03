@@ -1,6 +1,21 @@
 #pragma once
 #include <string>
-static double global_th;
+static double
+global_th,
+global_m,
+global_T,
+global_P,
+global_PC,
+global_i,
+global_c,
+global_SZ,
+global_SK,
+global_ih,
+global_Om,
+global_S0,
+global_vx,
+global_vy,
+global_vz;
 /*
 struct Point {
 	string name;
@@ -32,13 +47,11 @@ public:
 		X,
 		Y,
 		Z,
-		T,
+		T, 
 		P,
 		PC,
-		Hz,
-		A = 0,
 		ih,
-		c,
+		c, 
 		i,
 		SZ,
 		SK,
@@ -48,9 +61,27 @@ public:
 		vx,
 		vy,
 		vz;
-
 	vector<Meas> measVec;
 
+
+	Station()
+	{
+		T = global_T;
+		P = global_P;
+		PC = global_PC;
+		ih = global_ih;
+		c = global_c;
+		i = global_i;
+		SZ = global_SZ;
+		SK = global_SK;
+		Om = global_Om;
+		m = global_m;
+		s0 = global_S0;
+		vx = global_vx;
+		vy = global_vy;
+		vz = global_vz;
+	}
+		
 	void set_X(std::string& line);
 	
 	void set_th(std::string& line);
