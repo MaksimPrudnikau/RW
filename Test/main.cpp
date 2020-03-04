@@ -3,6 +3,25 @@
 
 using std::cout;
 
+void PrintAllData(vector<Station>& stations)
+{
+	for (size_t i = 0; i < stations.size(); ++i)
+	{
+		cout << "STATION " << stations[i].name << "\t";
+		cout << "X = " << stations[i].X << "\t";
+		cout << "Y = " << stations[i].Y << "\t";
+		cout << "Z = " << stations[i].Z << "\n";
+		for (size_t j = 0; j < stations[i].measVec.size(); ++j)
+		{
+			cout << "code = " << stations[i].measVec[j].code << "\t";
+			cout << "Hz = " << stations[i].measVec[j].Hz << "\t";
+			cout << "SD = " << stations[i].measVec[j].SD << "\t";
+			cout << "V2 = " << stations[i].measVec[j].V2 << "\n";
+			cout << "------------------------------------------------------------\n";
+		}
+	}
+}
+
 int main()
 {
 	ifstream file("mozyr.DAT");
@@ -27,7 +46,7 @@ int main()
 		}
 		else if (line.substr(49, 2) == "  ")
 		{
-			if (line.substr(72, 2) == "Om") 
+			if (line.substr(72, 2) == "Om")
 			{
 				stations.back().set_Om(line);
 			}
@@ -44,7 +63,7 @@ int main()
 		{
 			stations.back().set_T(line);
 		}
-		else if (line.substr(49, 1) == "i") 
+		else if (line.substr(49, 1) == "i")
 		{
 			stations.back().set_i(line);
 		}
@@ -61,16 +80,9 @@ int main()
 		{
 			stations.back().set_vx(line);
 		}
-		
+
 	}
 	file.close();
-	for (size_t i = 0; i < stations.size(); ++i)
-		for (size_t j = 0; j < stations[i].measVec.size(); ++i)
-		{
-			cout << "code = " << stations[i].measVec[j].code << "\t";
-			cout << "Hz = " << stations[i].measVec[j].Hz << "\t";
-			cout << "SD = " << stations[i].measVec[j].SD << "\t";
-			cout << "V2 = " << stations[i].measVec[j].V2 << "\n";
-		}
-
+	PrintAllData(stations);
+	return 0;
 }
