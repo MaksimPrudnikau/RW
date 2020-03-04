@@ -6,7 +6,6 @@ using std::cout;
 int main()
 {
 	ifstream file("mozyr.DAT");
-	if (file.is_open()) {
 	vector<Station> stations;
 	stations.push_back(Station());
 
@@ -65,11 +64,13 @@ int main()
 		
 	}
 	file.close();
-	cout << stations.size() << endl;
-	return 0;
-	}
-	else {
-		cout << "Cannot read the file\n";
-		return 1;
-	}
+	for (size_t i = 0; i < stations.size(); ++i)
+		for (size_t j = 0; j < stations[i].measVec.size(); ++i)
+		{
+			cout << "code = " << stations[i].measVec[j].code << "\t";
+			cout << "Hz = " << stations[i].measVec[j].Hz << "\t";
+			cout << "SD = " << stations[i].measVec[j].SD << "\t";
+			cout << "V2 = " << stations[i].measVec[j].V2 << "\n";
+		}
+
 }
