@@ -48,7 +48,20 @@ void Station::set_X(string& line) {
 	X = ReadMeas(line, FIRST_ROW_POS);
 	Y = ReadMeas(line, SECOND_ROW_POS);
 	Z = ReadMeas(line, THIRD_ROW_POS);
-	
+	T = global_T;
+	ih = global_ih;
+	P = global_P;
+	PC = global_PC;
+	i = global_i;
+	c = global_c;
+	SZ = global_SZ;
+	Om = global_Om;
+	SK = global_SK;
+	m = global_m;
+	S0 = global_S0;
+	vx = global_vx;
+	vy = global_vy;
+	vz = global_vz;
 }
 
 void Station::set_th(string& line) {

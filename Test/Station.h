@@ -57,30 +57,11 @@ public:
 		SK,
 		Om,
 		m,
-		s0,
+		S0,
 		vx,
 		vy,
 		vz;
 	vector<Meas> measVec;
-
-	//fixme
-	Station()
-	{
-		T = global_T;
-		P = global_P;
-		PC = global_PC;
-		ih = global_ih;
-		c = global_c;
-		i = global_i;
-		SZ = global_SZ;
-		SK = global_SK;
-		Om = global_Om;
-		m = global_m;
-		s0 = global_S0;
-		vx = global_vx;
-		vy = global_vy;
-		vz = global_vz;
-	}
 		
 	void set_X(std::string& line);
 	
