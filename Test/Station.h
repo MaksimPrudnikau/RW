@@ -31,10 +31,14 @@ struct Point {
 */
 struct Meas {
 	string targetName;
-	double SD;
-	double Hz;
-	double V2;
-	double th;
+	double
+		SD,
+		Hz,
+		V2,
+		X,
+		Y,
+		Z,
+		th;
 	string code;
 
 };
@@ -64,6 +68,8 @@ public:
 	vector<Meas> measVec;
 		
 	void set_X(std::string& line);
+
+	void set_X(std::string&, vector<Station>&);
 	
 	void set_th(std::string& line);
 

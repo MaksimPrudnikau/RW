@@ -64,6 +64,12 @@ void Station::set_X(string& line) {
 	vz = global_vz;
 }
 
+void Station::set_X(string& line, vector<Station>& measVec) {
+	measVec.back().measVec.back().X = ReadMeas(line, FIRST_ROW_POS);
+	measVec.back().measVec.back().Y = ReadMeas(line, SECOND_ROW_POS);
+	measVec.back().measVec.back().Z = ReadMeas(line, THIRD_ROW_POS);
+}
+
 void Station::set_th(string& line) {
 	global_th = ReadMeas(line, FIRST_ROW_POS); //то же самое, что для Х, так как позиция в строке одинаковая. Макс размер такой же
 	if (line.substr(72, 2)=="ih") {
@@ -84,39 +90,51 @@ void Station::set_SD(string& line) {
 	meas.V2 = ReadMeas(line, THIRD_ROW_POS);
 	meas.th = global_th;
 	measVec.push_back(meas);
-	
 }
 
 void Station::set_T(string& line) {
 	global_T = ReadMeas(line, FIRST_ROW_POS);
+	T = global_T;
 	global_P = ReadMeas(line, SECOND_ROW_POS);
+	P = global_P;
 	global_PC = ReadMeas(line, THIRD_ROW_POS);
+	PC = global_PC;
 }
 
 void Station::set_i(string& line) {
 	global_i = ReadMeas(line, FIRST_ROW_POS);
+	i = global_i;
 	global_c = ReadMeas(line, SECOND_ROW_POS);
+	c = global_c;
 	global_SZ = ReadMeas(line, THIRD_ROW_POS);
+	SZ = global_SZ;
 }
 
 void Station::set_Om(string& line) {
 	global_Om = ReadMeas(line, SECOND_ROW_POS);
+	Om = global_Om;
 }
 
 void Station::set_SK(string& line){
 	global_SK = ReadMeas(line, THIRD_ROW_POS);
+	SK = global_SK;
 }
 
 void Station::set_m(string& line) {
 	global_m = ReadMeas(line, FIRST_ROW_POS);
+	m = global_m;
 }
 
 void Station::set_s0(string& line) {
 	global_S0 = ReadMeas(line, THIRD_ROW_POS);
+	S0 = global_S0;
 }
 
 void Station::set_vx(string& line) {
 	global_vx = ReadMeas(line, FIRST_ROW_POS);
+	vx = global_vx;
 	global_vy = ReadMeas(line, SECOND_ROW_POS);
+	vy = global_vy;
 	global_vz = ReadMeas(line, THIRD_ROW_POS);
+	vz = global_vz;
 }
