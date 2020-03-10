@@ -81,13 +81,22 @@ void Station::set_Hz(string& line) {
 	//(measVec[measVec.size() - 1]).Hz = stod(remSpaces(line.substr(24, 11)));
 }
 
+double setDegrees(double x)
+{
+	int
+		degree = trunc(x),
+		min = static_cast<int>(trunc(x * 100.0)) % 100,
+		sec = static_cast<int>(trunc(x * 10000.0)) % 100;
+	return degree + min / 60.0 + sec / 3600.0;
+}
+
 void Station::set_SD(string& line) {
 	Meas meas;
 	meas.code = ReadTargetName(line,NAME_POS); ///Что брать за код символа??
 	meas.targetName = ReadTargetName(line, NAME_POS);
 	meas.SD = ReadMeas(line, FIRST_ROW_POS);
-	meas.Hz = ReadMeas(line, SECOND_ROW_POS);
-	meas.V2 = ReadMeas(line, THIRD_ROW_POS);
+	meas.Hz = setDegrees(ReadMeas(line, SECOND_ROW_POS));
+	meas.V2 = setDegrees(ReadMeas(line, THIRD_ROW_POS));
 	meas.th = global_th;
 	measVec.push_back(meas);
 }
