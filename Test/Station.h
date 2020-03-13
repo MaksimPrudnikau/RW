@@ -51,11 +51,11 @@ public:
 		X,
 		Y,
 		Z,
-		T, 
+		T,
 		P,
 		PC,
 		ih,
-		c, 
+		c,
 		i,
 		SZ,
 		SK,
@@ -64,30 +64,33 @@ public:
 		S0,
 		vx,
 		vy,
-		vz;
+		vz,
+		dir;
 	vector<Meas> measVec;
-		
-	void set_X(std::string& line);
+
+	void set_X(std::string&);
 
 	void set_X(std::string&, vector<Station>&);
-	
-	void set_th(std::string& line);
 
-	void set_Hz(std::string& line);
+	void set_th(std::string&);
 
-	void set_SD(std::string& line);
+	void set_Hz(std::string&);
 
-	void set_T(std::string& line);
+	void set_SD(std::string&);
 
-	void set_i(std::string& line);
+	void set_T(std::string&);
 
-	void set_SK(std::string& line);
+	void set_i(std::string&);
 
-	void set_Om(std::string& line);
+	void set_SK(std::string&);
 
-	void set_m(std::string& line);
+	void set_Om(std::string&);
 
-	void set_s0(std::string& line);
+	void set_m(std::string&);
 
-	void set_vx(std::string& line);
+	void set_s0(std::string&);
+
+	void set_Direct0(vector<Station>&, double);
+
+	void set_Direct(vector<Station>&, double);
 };

@@ -124,12 +124,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Direct.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Station.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Direct.h" />
     <ClInclude Include="headers.h" />
     <ClInclude Include="Station.h" />
   </ItemGroup>

@@ -135,3 +135,11 @@ void Station::set_s0(string& line) {
 	global_S0 = ReadMeas(line, THIRD_ROW_POS);
 	S0 = global_S0;
 }
+
+void Station::set_Direct0(vector<Station>& stations, double dir_0) {
+	long double dX, dY, angle;
+}
+
+void Station::set_Direct(vector<Station>& stations, double dir_0) {
+	long double dX, dY, angle;
+}

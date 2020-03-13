@@ -21,18 +21,12 @@
     <ClCompile Include="Station.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Direct.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Station.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Direct.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
