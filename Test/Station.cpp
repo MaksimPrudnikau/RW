@@ -59,9 +59,6 @@ void Station::set_X(string& line) {
 	SK = global_SK;
 	m = global_m;
 	S0 = global_S0;
-	vx = global_vx;
-	vy = global_vy;
-	vz = global_vz;
 }
 
 void Station::set_X(string& line, vector<Station>& measVec) {
@@ -137,13 +134,4 @@ void Station::set_m(string& line) {
 void Station::set_s0(string& line) {
 	global_S0 = ReadMeas(line, THIRD_ROW_POS);
 	S0 = global_S0;
-}
-
-void Station::set_vx(string& line) {
-	global_vx = ReadMeas(line, FIRST_ROW_POS);
-	vx = global_vx;
-	global_vy = ReadMeas(line, SECOND_ROW_POS);
-	vy = global_vy;
-	global_vz = ReadMeas(line, THIRD_ROW_POS);
-	vz = global_vz;
 }

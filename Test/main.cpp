@@ -97,10 +97,6 @@ int main()
 				stations.back().set_s0(line);
 			}
 		}
-		else if (line.substr(49, 2) == "vx")
-		{
-			stations.back().set_vx(line);
-		}
 
 	}
 	file.close();
