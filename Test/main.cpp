@@ -53,8 +53,8 @@ int main()
 			if (line.substr(23, 1) != " ")
 			{
 				Station station;
-				station.set_X(line);
 				stations.push_back(station);
+				stations.back().set_X(line);
 			}
 			else
 			{
@@ -74,6 +74,11 @@ int main()
 			else if (line.substr(95, 2) == "SK")
 			{
 				stations.back().set_SK(line);
+			}
+			else if (line.substr(95, 1) == "Z")
+			{
+				stations.push_back(Station());
+				stations.back().set_X(line);
 			}
 		}
 		else if (line.substr(49, 2) == "SD")

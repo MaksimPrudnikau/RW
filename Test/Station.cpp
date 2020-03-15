@@ -2,7 +2,7 @@
 #include "Station.h"
 
 const int
-NAME_POS = 22, //позиция для имен
+NAME_POS = 25, //позиция для имен
 FIRST_ROW_POS = 53, // первая колонка
 SECOND_ROW_POS = 76, //вторая колонка
 THIRD_ROW_POS = 99; // третяя колонка
@@ -40,6 +40,8 @@ double ReadMeas(string line, int pos)
 	for (int i = pos; line[i] != '|'; ++i)
 		if ((int)line[i] >= 48 && (int)line[i] <= 57 || (int)line[i] == 46) // если  0 <= line[i] <= 9 или line[i] == .
 			target.push_back(line[i]);
+	if (target == "")
+		target = "0";
 	return stod(target);
 }
 

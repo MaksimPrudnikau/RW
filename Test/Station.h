@@ -93,4 +93,5 @@ public:
 	void set_Direct0(vector<Station>&, double);
 
 	void set_Direct(vector<Station>&, double);
+
 };
