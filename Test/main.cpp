@@ -50,7 +50,7 @@ int main()
 		}
 		else if (line.substr(49, 1) == "X")
 		{
-			if (line.substr(23, 1) == "S")
+			if (line.substr(23, 1) != " ")
 			{
 				Station station;
 				station.set_X(line);
